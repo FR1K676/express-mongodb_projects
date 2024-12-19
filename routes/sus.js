@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 router.get("/:nick",checkAuth, async function(req, res, next) {
     var sus = await Su.find({nick: req.params.nick});
     console.log(sus)
-    if(!sus.length) return next(new Error("Нет такого котенка в мультфильме Три кота"))
+    if(!sus.length) return next(new Error("Нет такого самолёта"))
     var su = sus[0];
     res.render('su', {
     title: su.title,
